@@ -1,0 +1,93 @@
+/* ===== RESET GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: #0a0a1a;
+  color: white;
+  overflow: hidden;
+
+  /* ✅ Centrează tot jocul React */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  /* Pentru efectul de strălucire subtil */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+/* ===== FUNDAL CU STELE ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 90%, white, transparent);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  animation: stars 50s linear infinite;
+  opacity: 0.3;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===== ANIMAȚIE STELE ===== */
+@keyframes stars {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* ===== ROOT REACT ===== */
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== STILURI BUTOANE ===== */
+button {
+  font-family: 'Press Start 2P', cursive;
+  outline: none;
+  user-select: none;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.8);
+}
+
+/* ===== TEXT PRETTIFY ===== */
+code {
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* ===== SCROLL PERSONALIZAT (opțional) ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee, #ec4899);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
